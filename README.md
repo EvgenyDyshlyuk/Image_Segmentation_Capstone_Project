@@ -8,7 +8,7 @@ I used 2007 when training on CPU and 2012 dataset when training on GPU
 
 ## Architechture
 Fully convolutional U-Net architechture was selected for this task. 
-![**t-SNE representation for my photo archive](https://raw.githubusercontent.com/EvgenyDyshlyuk/DeepLearning_face_detection_embeddings_clustering/master/Figures/tSNE_all.png)
+![**U-Net](https://github.com/EvgenyDyshlyuk/Image_Segmentation_Capstone_Project/blob/master/figures/loss.png)
 
 Fully-convolutional implies that it doesn't contain fully-connected layers, but only convolutional, max-pooling, and batch normalization layers all of which are invariant to the size of an image. This allows the network to be able to accept images of any size (practically upsampling should be done on the image of even diminsion - so for UNET this implies image size multiple of 2^3 = 8, and for ResNetUnet image size mulitple 2^5 = 32).
 Convolutional neural nets are not scale-invariant. For example, if one trains on the cats of the same size in pixels on images of a fixed resolution, the net would fail on images of smaller or larger sizes of cats. In order to overcome this problem, there are at least two methods )might be more in the literature):
@@ -23,5 +23,5 @@ Although different image sizes are possible, practically while training I did no
 - I utilized all avalible credits on Google Colab and training seems to flatten out. 
 - ResNetUnet showed better results(expected) and I used it. Pretrained version of ResNet showed better convergence than the not-pretrained one (expected as well).
 - I trained the model using a combination of Dice and binary cross entropy (BCE) loss - this loss showed some improvements.
-![**t-SNE representation for my photo archive](https://raw.githubusercontent.com/EvgenyDyshlyuk/DeepLearning_face_detection_embeddings_clustering/master/Figures/tSNE_all.png)
+![**Loss Functions](https://github.com/EvgenyDyshlyuk/Image_Segmentation_Capstone_Project/blob/master/figures/loss.png)
 - I see that class imbalance is a problem since MASK border class and People class (more represented) are showing better results. I tried to overcome this problem using FocalTversky loss but did not sucseed so far. (https://medium.com/@junma11/loss-functions-for-medical-image-segmentation-a-taxonomy-cefa5292eec0)
