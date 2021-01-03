@@ -22,6 +22,6 @@ Although different image sizes are possible, practically while training I did no
 ## Training
 - I utilized all avalible credits on Google Colab and training seems to flatten out. 
 - ResNetUnet showed better results(expected) and I used it. Pretrained version of ResNet showed better convergence than the not-pretrained one (expected as well).
-- I trained the model using a combination of Dice and binary cross entropy (BCE) loss - this loss showed some improvements.
+- I trained the model using a combination Loss of Dice and binary cross entropy (BCE).
 ![**Loss Functions](https://github.com/EvgenyDyshlyuk/Image_Segmentation_Capstone_Project/blob/master/figures/loss.png)
 - I see that class imbalance is a problem since MASK border class and People class (more represented) are showing better results. I tried to overcome this problem using FocalTversky loss but did not sucseed so far. (https://medium.com/@junma11/loss-functions-for-medical-image-segmentation-a-taxonomy-cefa5292eec0)
